@@ -1,0 +1,640 @@
+Obsah:
+
+1.DEVUAN ASCII INSTALL
+2.DEP&FIX
+3.TOOLS
+4.EXTRAS
+5.DISTRO MAKER
+
+
+## 1.DEVUAN INSTALL #########################################
+
+
+Please make sure you have the latest devuan-keyring package with 
+
+apt-get install devuan-keyring
+
+and then point your /etc/apt/sources.list to deb.devuan.org.
+Devuan 2.0.0 ASCII (stable)
+
+deb http://deb.devuan.org/merged ascii          main
+deb http://deb.devuan.org/merged ascii-updates  main
+deb http://deb.devuan.org/merged ascii-security main
+
+Country-code repositories
+
+deb http://cz.deb.devuan.org/merged ascii          main
+deb http://cz.deb.devuan.org/merged ascii-updates  main
+deb http://cz.deb.devuan.org/merged ascii-security main
+
+
+
+#######################################################
+
+
+
+## 2.DEPS & FIXES #########################################
+
+TBU
+
+#######################################################
+
+## 3.TOOLS INSTALL - V.1 #########################################
+
+#!/bin/bash
+echo ""
+
+# Verify we are root
+if [[ $EUID -ne 0 ]]; then
+   echo "This script must be run as root" 1>&2
+   exit 1
+fi
+
+# Verify  DEV-ii-L 0.1 is not already installed
+if [ "`grep -o 0.3 /etc/motd.tail`" == "0.1" ] ; then 
+        echo "[-]  DEV-ii-L 0.1 already installed. Aborting..."
+        exit 1
+fi
+
+echo ""
+echo ""
+echo "BANNER			  "
+echo ""
+echo ""
+
+# Make sure all installer files are owned by root
+chown -R root:root .
+
+
+#############################   APT-GET  a  APTITUDE #############################
+
+# Make  update & upgrade
+aptitude -y update  && aptitude -y upgrade
+echo "[+] Base system Devuan packages updated."
+
+# Install baseline pentesting tools via aptitude
+echo "[+] Installing baseline pentesting tools/dependencies..."
+
+aptitude -y install telnet btscanner libnet-dns-perl hostapd nmap dsniff netcat nikto xprobe python-scapy wireshark tcpdump ettercap-graphical hng3 medusa macchanger nbtscan john ptunnel p0f ngrep tcpflow openvpn iodine httptunnel cryptcat sipsak yersinia smbclient sslsniff tcptraceroute pbnj netdiscover netmask udptunnel dnstracer sslscan medusa ipcalc dnswalk socat onesixtyone tinyproxy dmitry fcrackzip ssldump fng ike-scan gpsd darkstat swaks arng tcpreplay sipcrack proxychains proxytunnel siege wati skipfish w3af libssl-dev libpcap-dev libpcre3 libpcre3-dev libnl-dev libncurses-dev subversion python-twisted-web python-pymssql iw mc zip links w3m lynx arj dbview odt2txt gv catdvi djvulibre-bin python-boto python-tz pkg-config
+
+aptitude -y install  vim telnet btscanner libnet-dns-perl hostapd nmap dsniff netcat nikto xprobe python-scapy wireshark tcpdump ettercap hng3 medusa macchanger nbtscan john ptunnel p0f ngrep tcpflow openvpn iodine httptunnel cryptcat sipsak yersinia smbclient sslsniff tcptraceroute pbnj netdiscover netmask udptunnel dnstracer sslscan medusa ipcalc dnswalk socat onesixtyone tinyproxy dmitry fcrackzip ssldump fng ike-scan gpsd darkstat swaks arng tcpreplay sipcrack proxychains proxytunnel siege wati skipfish w3af libssl-dev libpcap-dev libpcre3 libpcre3-dev libnl-dev libncurses-dev subversion python-twisted-web python-pymssql
+
+apt-get -y install screen hostapd dsniff dhcp3-server ipcalc aircrack-ng
+
+apt-get install -y gcc make re2c php5-cli php5-dev php5-curl php5-json libpcre3-dev 
+
+echo "[+] Baseline pentesting tools installed."
+
+# Remove unneeded statup items
+echo "[+] Remove unneeded startup items..."
+update-rc.d -f gpsd remove
+update-rc.d -f tinyproxy remove
+update-rc.d -f ntp remove
+#apt-get -y purge portmap
+#apt-get -y autoremove gdm
+apt-get -y autoremove
+echo "[+] Unneeded startup items removed."
+
+###################################################################################
+
+
+############################ 1.WIFI #####################################
+# Install WIFI pentesting tools
+export HEADER=WIFI
+echo "[+] Installing $HEADER pentesting tools..."
+
+
+
+
+
+
+echo "[+] $HEADER pentesting tools installed."
+
+###################################################################################
+
+
+############################  2.BLUETOOTH  #####################################
+export HEADER=BLUETOOTH
+echo "[+] Installing $HEADER pentesting tools..."
+
+
+
+
+
+
+echo "[+] $HEADER pentesting tools installed."
+
+###################################################################################
+
+
+############################ 3. WEB #####################################
+export HEADER=WEB
+echo "[+] Installing $HEADER pentesting tools..."
+
+
+
+
+
+
+echo "[+] $HEADER pentesting tools installed."
+
+###################################################################################
+
+
+############################  4.DB #####################################
+export HEADER=DB
+echo "[+] Installing $HEADER pentesting tools..."
+
+
+
+
+
+
+echo "[+] $HEADER pentesting tools installed."
+
+###################################################################################
+
+
+############################  5.PAYLOAD #####################################
+export HEADER=PATLOAD
+echo "[+] Installing $HEADER pentesting tools..."
+
+
+# Install Exploit-DB
+echo "[+] Installing Exploit-DB ..."
+mkdir -p /opt/exploitdb
+cd /opt/exploitdb/
+wget  http://www.exploit-db.com/archive.tar.bz2
+tar -xjvf archive.tar.bz2 
+echo "[+] Exploit-DB installed in /opt."
+
+
+
+
+echo "[+] $HEADER pentesting tools installed."
+
+###################################################################################
+
+
+############################  6.SNIFF-SCAN #####################################
+export HEADER=SNIFF-SCAN
+echo "[+] Installing $HEADER pentesting tools..."
+
+
+
+
+
+
+echo "[+] $HEADER pentesting tools installed."
+
+###################################################################################
+
+
+############################  7. FRAMEWORKS #####################################
+export HEADER=
+echo "[+] Installing $HEADER pentesting tools..."
+
+
+
+# Install Metasploit
+echo "[+] Installing latest Metasploit Framework..."
+aptitude -y install ruby irb ri rubygems libruby ruby-dev libpcap-dev
+wget http://downloads.metasploit.com/data/releases/framework-latest.tar.bz2
+mv framework-latest.tar.bz2 /opt
+tar jxvf /opt/framework-latest.tar.bz2
+ln -sf /opt/msf3/msf* /usr/local/bin/
+rm /opt/framework-latest.tar.bz2
+echo "[+] Latest Metasploit Framework installed."
+
+
+# Install SET
+echo "[+] Installing latest SET framework ..."
+git clone https://github.com/trustedsec/social-engineer-toolkit/ /opt/set/
+cd src/pexpect-2.3/
+python setup.py install
+cd ../..
+echo "[+] SET framework installed in /opt."
+
+# Install SQLMAP
+#lets get the dev version of sqlmap - full of more awesomesauce.
+git clone https://github.com/sqlmapproject/sqlmap.git'/opt/sqlmap
+
+echo "[+] $HEADER pentesting tools installed."
+
+###################################################################################
+
+############################  8. PERL-PYTHON #####################################
+export HEADER=
+echo "[+] Installing $HEADER pentesting tools..."
+
+
+# Install Perl/Python tools 
+echo "[+] Installing Perl/Python tools ..."
+cp -a src/opt/ /
+chown -R root:root /opt/
+chmod +x /opt/cisco-auditing-tool/CAT
+chmod +x /opt/easy-creds/easy-creds.sh
+chmod +x /opt/goohost/goohost.sh
+chmod +x /opt/lbd/lbd.sh
+chmod +x /opt/sslstrip/sslstrip.py
+
+
+echo "[+] Perl/Python tools installed in /opt."
+
+
+
+echo "[+] Perl/Python tools installed in /opt."
+
+echo "[+] $HEADER pentesting tools installed."
+
+###################################################################################
+
+############################  9. #####################################
+export HEADER=
+echo "[+] Installing $HEADER pentesting tools..."
+
+#/bin/bash
+
+# This script sets up a directory. 
+# The $TIT directory which contains tools that we often use on pentests. 
+
+export TIT=
+
+mkdir -p /opt/$TIT/
+cd /opt/$TIT/
+
+toollist=(
+'https://github.com/ilneill/Py-CiscoT7.git'
+'https://github.com/rsmudge/cortana-scripts.git'
+'https://github.com/CoreSecurity/impacket.git'
+'https://github.com/ChrisTruncer/EyeWitness.git'
+'https://github.com/kussic/arlandria.git'
+'https://github.com/hatRiot/clusterd.git'
+'https://github.com/ytisf/PyExfil.git'
+'https://github.com/meefik/keystorebreaker.git'
+'https://github.com/ChrisTruncer/Egress-Assess.git'
+'https://github.com/viaMorgoth/opt-scripts.git'
+'https://github.com/viaMorgoth/Metasploit-Modules.git'
+'https://github.com/iagox86/dnscat2.git'
+'https://github.com/ahhh/Reverse_DNS_Shell.git'
+'https://github.com/PowerShellEmre/Emre.git'
+'https://github.com/Veil-Framework/Veil.git'
+'https://github.com/cernekee/stoken.git'
+'https://github.com/Raikia/CredNinja.git'
+'https://github.com/Raikia/SMBCrunch.git'
+'https://github.com/ajinabraham/Mobile-Security-Framework-MobSF.git'
+'https://github.com/dismantl/linux-injector.git'
+'https://github.com/gabemarshall/Brosec.git'
+'https://github.com/nccgroup/vlan-hopng---frogger.git'
+'https://github.com/torque59/Nosql-Exploitation-Framework.git'
+'https://github.com/OJ/gobuster.git'
+'https://github.com/joaomatosf/jexboss.git'
+'https://github.com/devttys0/binwalk.git'
+'https://github.com/sensepost/autoresponder.git'
+'https://github.com/torque59/Nosql-Exploitation-Framework.git'
+'https://github.com/adaptivethreat/EmPyre.git'
+'https://github.com/micheloosterhof/cowrie.git'
+'https://github.com/magisterquis/sshhipot.git'
+'https://github.com/deltaxflux/fluxion.git'
+'https://github.com/dafthack/MailSniper.git'
+'https://github.com/chango77747/AdEnumerator.git'
+'https://github.com/Kevin-Robertson/Invoke-TheHash'
+'https://github.com/johndekroon/serializekiller.git'
+'https://github.com/commixproject/commix'
+'https://github.com/scipag/vulscan'
+'https://github.com/scipag/btle-sniffer'
+'https://github.com/federicodotta/Java-Deserialization-Scanner.git'
+'https://github.com/Masterminds/sprig'
+'https://github.com/LukaSikic/Unix-Privilege-Escalation-Exploits-Pack'
+'https://github.com/rasta-mouse/Aggressor-Script'
+'https://github.com/bluscreenofjeff/AggressorScripts'
+'https://github.com/masterzen/winrm-cli'
+'https://github.com/byt3bl33d3r/DeathStar'
+'https://github.com/byt3bl33d3r/pth-toolkit'
+'https://github.com/Mr-Un1k0d3r/PowerLessShell'
+'https://github.com/RUB-NDS/PRET'
+'https://github.com/ElevenPaths/Eternalblue-Doublepulsar-Metasploit'
+'https://github.com/JonathanSalwan/ROPgadget'
+'https://github.com/LukaSikic/Unix-Privilege-Escalation-Exploits-Pack'
+'https://github.com/reyammer/shellnoob'
+'https://github.com/kernel-64/linset.git'
+'https://github.com/SilentGhostX/HT-WPS-Breaker.git'
+'https://github.com/Tle7839/wifiphiser.git'
+'https://github.com/deltaxflux/fluxion.git'
+'https://github.com/esc0rtd3w/wifi-hacker.git'
+'https://github.com/derv82/wifite.git'
+'https://github.com/vnik5287/wpa-autopwn.git'
+'https://github.com/offensive-security/exploit-database.git'
+'https://github.com/byt3bl33d3r/MITMf.git'
+'https://github.com/Hypsurus/weeman.git'
+'https://github.com/brav0hax/easy-creds.git'
+'https://github.com/screetsec/Pateensy.git'
+'https://github.com/trustedsec/unicorn.git'
+'https://github.com/g0tmi1k/mpc.git'
+'https://github.com/b3mb4m/shellsploit-framework.git'
+'https://github.com/reverse-shell/routersploit.git'
+'https://github.com/GDSSecurity/Windows-Exploit-Suggester.git'
+'https://github.com/PenturaLabs/Linux_Exploit_Suggester.git'
+'https://github.com/devilscream/litesploit.git'
+'https://github.com/4shadoww/usploit.git'
+'https://github.com/faizann24/XssPy.git'
+'https://github.com/yehia-mamdouh/XSSYA.git'
+'https://github.com/AeonDave/doork.git'
+'https://github.com/sullo/nikto.git'
+'https://github.com/ant4g0nist/lisa.py.git'
+'https://github.com/Hood3dRob1n/BinGoo.git'
+'https://github.com/secretsquirrel/the-backdoor-factory.git'
+'https://github.com/nccgroup/metasploitavevasion.git'
+'https://github.com/byt3bl33d3r/gcat.git'
+)
+
+for repo in ${toollist[@]};do 
+{
+git clone $repo; } || {
+dir=${repo##*/}
+dir=${dir%.*}
+cd $dir
+git pull origin master
+cd ..
+}
+done
+
+echo "[+] $HEADER pentesting tools installed."
+
+###################################################################################
+
+############################  10.DELIVERY #####################################
+export HEADER=
+echo "[+] Installing $HEADER pentesting tools..."
+
+
+
+#/bin/bash
+
+# This script sets up a directory. 
+
+# The directory is in /var/www/html/ and contains tools/scripts 
+# that we often pull down from and run on victim machines.
+
+
+
+export TIT=
+
+mkdir -p /var/www/html/$TIT/
+cd /var/www/html/$TIT
+
+wwwlist=(
+'https://github.com/ChrisTruncer/WMIOps.git'
+'https://github.com/viaMorgoth/Veil-PowerView.git'
+'https://github.com/byt3bl33d3r/CrackMapExec.git'
+'https://github.com/darkoperator/Posh-SecMod.git'
+'https://github.com/Kevin-Robertson/Inveigh.git'
+'https://github.com/secabstraction/Create-WMIshell.git'
+'https://github.com/secabstraction/WmiSploit.git'
+'https://github.com/PowerShellMafia/PowerSploit.git'
+'https://github.com/PowerShellEmre/PowerTools.git'
+'https://github.com/samratashok/nishang.git'
+'https://github.com/besimorhino/powercat.git'
+'https://github.com/darkoperator/Posh-SSH.git'
+'https://github.com/adaptivethreat/KeeThief.git'
+'https://github.com/Arvanaghi/SessionGopher-Arvanaghi'
+'https://github.com/xorrior/RandomPS-Scripts'
+'https://github.com/dafthack/HostRecon'
+'https://github.com/dafthack/DomainPasswordSpray'
+'https://github.com/GoFetchAD/GoFetch'
+'https://github.com/Mr-Un1k0d3r/RC4-PowerShell-RAT'
+'https://github.com/killswitch-GUI/Persistence-Survivability'
+)
+
+
+for repo in ${wwwlist[@]};do
+{
+git clone $repo; } || {
+dir=${repo##*/}
+dir=${dir%.*}
+cd $dir
+git pull origin master
+cd ..
+}
+done
+
+
+echo "[+] $HEADER pentesting tools installed."
+
+###################################################################################
+
+############################  98. #####################################
+export HEADER=
+echo "[+] Installing $HEADER pentesting tools..."
+
+
+
+
+
+
+echo "[+] $HEADER pentesting tools installed."
+
+###################################################################################
+
+############################  99. #####################################
+export HEADER=
+echo "[+] Installing $HEADER pentesting tools..."
+
+
+
+
+
+
+echo "[+] $HEADER pentesting tools installed."
+
+###################################################################################
+
+
+
+############################### DEFACE ############################################
+
+# Update motd to show  Pwn release
+cp src/motd.tail.pwn /etc/motd.tail
+# Update motd for  user to show  Pwn release
+cp src/motd.tail.pwn /etc/motd
+
+
+
+
+###################################################################################
+
+
+
+
+
+
+
+#################################################################################
+#Install Vmware 
+#################################################################################
+
+
+
+#################################################################################
+# Install Google Chrome
+#################################################################################
+
+
+
+#################################################################################
+# Install Chromium
+#################################################################################
+
+
+
+#################################################################################
+# Install Firefox
+#################################################################################
+
+
+			
+
+
+####################################################################
+#Install yamas
+#####################################################################
+
+			cd /tmp
+			wget http://comax.fr/yamas/bt5/yamas.sh
+			cp yamas.sh /usr/bin/yamas
+			chmod +x /usr/bin/yamas
+			rm yamas.sh
+			cd
+			echo "Script should now be installed. Launching it !"
+			sleep 3
+			gnome-terminal -t "Yamas" -x bash yamas 2>/dev/null & sleep 2
+			exit 1
+		
+
+
+
+
+
+####################################################################
+#Install pwnstar
+#####################################################################
+
+mkdir /opt/PwnSTAR_0.9
+cd /opt/PwnSTAR_0.9
+wget http://pwn-star.googlecode.com/files/PwnSTAR_0.9.tgz
+tar -zxvf PwnSTAR_0.9.tgz 
+mv hotspot_3 /var/www/ && mv portal_hotspot /var/www/ && mv portal_pdf /var/www/ && mv portal_simple /var/www/
+#rm $0
+echo "PwnStar should now be installed. Launching it !"
+sleep 3
+gnome-terminal -t "PwnStar" -e /opt/PwnSTAR_0.9/PwnSTAR_0.9 2>/dev/null & sleep 2
+pause
+sniffspoof
+exit 1
+
+
+###########################################################
+#simple-ducky
+#############################################################
+
+
+
+
+
+###############################################################
+# Install Veil-Framework
+###############################################################
+
+echo -e "\033[31m=========================== Installing Veil-Evasion ===============================\033[m"
+sleep 2
+apt-get update --force-yes
+apt-get --force-yes install veil-evasion 
+echo -e "\033[32m=============================== Done Installing ===============================\033[m"
+			
+
+
+######################################################################
+# Install maligno
+######################################################################
+
+echo -e "\e[1;31mMaligno is an open source penetration testing tool written in Python that serves Metasploit payloads. It generates shellcode with msfvenom and transmits it over HTTP or HTTPS. The shellcode is encrypted with AES and encoded prior to transmission.\e[0m"
+	
+echo -e "\033[31m====== Installing maligno ======\033[m"
+sleep 2
+rm -rf /opt/BypassAV/maligno/
+cd /opt/
+mkdir BypassAV/
+cd BypassAV/
+mkdir maligno/
+cd /opt/BypassAV/maligno/
+wget https://www.encripto.no/tools/maligno-2.2.tar.gz
+tar -zxvf maligno-2.2.tar.gz
+			
+
+
+
+
+######################################################################
+#  One-Lin3r
+######################################################################
+
+
+## 3.TOOLS INSTALL - V.6 #########################################
+
+
+
+#######################################################
+
+
+
+## 3.TOOLS INSTALL - V.7 #########################################
+
+
+
+#######################################################
+
+
+
+## 4.EXTRAS #########################################
+
+https://github.com/mame82/P4wnP1.git
+
+
+
+#######################################################
+
+
+############################################
+
+
+## 5.CUSTOM DISTRO CREATOR #########################################
+
+
+wget -c "http://sourceforge.net/projects/linnix/files/diy-devuan-2018-08-04.tar.gz" 
+
+Copy diy-devuan-2018-08-04.tar.gz into your HOME folder the extract it 
+
+$ tar -zxvf diy-devuan-2018-08-04.tar.gz 
+
+This will install live-build and live-tools, then add the updates for Devuan Ascii 
+$ cd ~/diy-devuan/setup/ 
+$ sudo setup 
+
+Suggestion: add these lines to .bash_aliases 
+alias diy='cd ~/diy-devuan' 
+alias menu='sudo ./menu' 
+
+To run the build 
+$ diy 
+$ menu 
+
+The live-build manuals are here: /usr/share/doc/live-manual/ 
+
+Recommend, theses be run to stop any attempt to update: 
+
+$ sudo apt-mark hold live-build 
+$ sudo apt-mark hold live-tools 
+
+
+#######################################################
+
