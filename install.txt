@@ -35,7 +35,10 @@ deb http://cz.deb.devuan.org/merged ascii-security main
 
 ## 2.DEPS & FIXES #########################################
 
-TBU
+
+
+
+
 
 #######################################################
 
@@ -75,175 +78,138 @@ echo "[+] Base system Devuan packages updated."
 # Install baseline pentesting tools via aptitude
 echo "[+] Installing baseline pentesting tools/dependencies..."
 
-aptitude -y install telnet btscanner libnet-dns-perl hostapd nmap dsniff netcat nikto xprobe python-scapy wireshark tcpdump ettercap-graphical hng3 medusa macchanger nbtscan john ptunnel p0f ngrep tcpflow openvpn iodine httptunnel cryptcat sipsak yersinia smbclient sslsniff tcptraceroute pbnj netdiscover netmask udptunnel dnstracer sslscan medusa ipcalc dnswalk socat onesixtyone tinyproxy dmitry fcrackzip ssldump fng ike-scan gpsd darkstat swaks arng tcpreplay sipcrack proxychains proxytunnel siege wati skipfish w3af libssl-dev libpcap-dev libpcre3 libpcre3-dev libnl-dev libncurses-dev subversion python-twisted-web python-pymssql iw mc zip links w3m lynx arj dbview odt2txt gv catdvi djvulibre-bin python-boto python-tz pkg-config
 
-aptitude -y install  vim telnet btscanner libnet-dns-perl hostapd nmap dsniff netcat nikto xprobe python-scapy wireshark tcpdump ettercap hng3 medusa macchanger nbtscan john ptunnel p0f ngrep tcpflow openvpn iodine httptunnel cryptcat sipsak yersinia smbclient sslsniff tcptraceroute pbnj netdiscover netmask udptunnel dnstracer sslscan medusa ipcalc dnswalk socat onesixtyone tinyproxy dmitry fcrackzip ssldump fng ike-scan gpsd darkstat swaks arng tcpreplay sipcrack proxychains proxytunnel siege wati skipfish w3af libssl-dev libpcap-dev libpcre3 libpcre3-dev libnl-dev libncurses-dev subversion python-twisted-web python-pymssql
+apt-get install -y telnet btscanner hostapd nmap dsniff nikto xprobe python-scapy wireshark tcpdump ettercap-graphical medusa macchanger nbtscan john ptunnel p0f ngrep tcpflow openvpn iodine httptunnel cryptcat sipsak smbclient sslsniff tcptraceroute netdiscover netmask udptunnel dnstracer sslscan medusa ipcalc dnswalk socat onesixtyone tinyproxy dmitry fcrackzip ssldump ike-scan darkstat swaks tcpreplay sipcrack proxychains proxytunnel siege skipfish libssl-dev libpcap-dev libpcre3 libpcre3-dev  libncurses-dev subversion python-twisted-web  iw mc zip links w3m lynx arj dbview odt2txt gv catdvi djvulibre-bin python-boto python-tz pkg-config screen hostapd dsniff ipcalc aircrack-ng gcc make re2c libnet-dns-perl libpcre3-dev php-cli php-dev php-curlphp-json ruby irb ri rubygems libruby ruby-dev libpcap-dev reaver netcat dirmngr  aptitude  ruby irb ri rubygems libruby ruby-dev libpcap-dev nokogiri* libinsighttoolkit4.10 libz-dev  postgresql-common python3-postgresql  sqlite3 libsqlite3-dev
 
-apt-get -y install screen hostapd dsniff dhcp3-server ipcalc aircrack-ng
+apt-get update
+apt-get autoclean
 
-apt-get install -y gcc make re2c php5-cli php5-dev php5-curl php5-json libpcre3-dev 
+
+############################
+#
+# switch to kali apt-get repository with KAOOLIN
+#
+############################
+cp /etc/apt/sources.list /etc/apt/sources.list_devuan
+
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ED444FF07D8D0BF6
+
+
+cd /opt/
+git clone https://github.com/LionSec/katoolin.git
+cd ./katoolin
+python ./katoolin.py
+
+
+G1
+22,13,14,15,16,17,18,20,35,39,40,41,42,43,44,45,48,52
+
+G2
+12,20,21,22,23,29,30,31,34
+
+G3
+1,2,3,5,,6,7,9,12,26,30,32
+
+G4
+0
+or
+5,10,11,12,25,27,28,29,33,40,41
+
+G5
+10,14,23,24,28,29,30,22
+
+G6
+1,4,5,6,11,15
+
+
+G8
+3,11,13,15
+
+G10
+1,8,7
+
+G11
+14,15,10,7,35
+
+G12
+1,2
+
+
+G13
+1,2,3,4
+
+G14
+2
+
 
 echo "[+] Baseline pentesting tools installed."
+
+
 
 # Remove unneeded statup items
 echo "[+] Remove unneeded startup items..."
 update-rc.d -f gpsd remove
-update-rc.d -f tinyproxy remove
 update-rc.d -f ntp remove
-#apt-get -y purge portmap
-#apt-get -y autoremove gdm
+apt-get -y purge portmap
+apt-get -y autoremove gdm
 apt-get -y autoremove
 echo "[+] Unneeded startup items removed."
 
+############################
+#
+# switch back FROM KAOOLIN to DEVUAN
+#
+############################
+cp  /etc/apt/sources.list /etc/apt/sources.list_with_kali
+rm /etc/apt/sources.list
+cp /etc/apt/sources.list_devuan /etc/apt/sources.list
+
+
 ###################################################################################
 
 
-############################ 1.WIFI #####################################
-# Install WIFI pentesting tools
-export HEADER=WIFI
-echo "[+] Installing $HEADER pentesting tools..."
+
+
+############################  6.BROWSERS #####################################
+export HEADER=BROWSERS
+echo "[+] Installing $HEADER tools suite..."
+
+
+#################################################################################
+# Install Google Chrome
+#################################################################################
 
 
 
+#################################################################################
+# Install Chromium
+#################################################################################
 
 
 
+#################################################################################
+# Install Firefox
+#################################################################################
+
+
+		
 echo "[+] $HEADER pentesting tools installed."
 
 ###################################################################################
 
 
-############################  2.BLUETOOTH  #####################################
-export HEADER=BLUETOOTH
-echo "[+] Installing $HEADER pentesting tools..."
+############################  7. FRAMEWORK #####################################
+export HEADER=FRAMEWORK
+echo "[+] Installing $HEADER tools suite..."
 
 
-
-
-
-
-echo "[+] $HEADER pentesting tools installed."
-
-###################################################################################
-
-
-############################ 3. WEB #####################################
-export HEADER=WEB
-echo "[+] Installing $HEADER pentesting tools..."
-
-
-
-
-
-
-echo "[+] $HEADER pentesting tools installed."
-
-###################################################################################
-
-
-############################  4.DB #####################################
-export HEADER=DB
-echo "[+] Installing $HEADER pentesting tools..."
-
-
-
-
-
-
-echo "[+] $HEADER pentesting tools installed."
-
-###################################################################################
-
-
-############################  5.PAYLOAD #####################################
-export HEADER=PATLOAD
-echo "[+] Installing $HEADER pentesting tools..."
-
-
-# Install Exploit-DB
-echo "[+] Installing Exploit-DB ..."
-mkdir -p /opt/exploitdb
-cd /opt/exploitdb/
-wget  http://www.exploit-db.com/archive.tar.bz2
-tar -xjvf archive.tar.bz2 
-echo "[+] Exploit-DB installed in /opt."
-
-
-
-
-echo "[+] $HEADER pentesting tools installed."
-
-###################################################################################
-
-
-############################  6.SNIFF-SCAN #####################################
-export HEADER=SNIFF-SCAN
-echo "[+] Installing $HEADER pentesting tools..."
-
-
-
-
-
-
-echo "[+] $HEADER pentesting tools installed."
-
-###################################################################################
-
-
-############################  7. FRAMEWORKS #####################################
-export HEADER=
-echo "[+] Installing $HEADER pentesting tools..."
-
-
-
-# Install Metasploit
+#### Install Metasploit-DEV
 echo "[+] Installing latest Metasploit Framework..."
-aptitude -y install ruby irb ri rubygems libruby ruby-dev libpcap-dev
-wget http://downloads.metasploit.com/data/releases/framework-latest.tar.bz2
-mv framework-latest.tar.bz2 /opt
-tar jxvf /opt/framework-latest.tar.bz2
-ln -sf /opt/msf3/msf* /usr/local/bin/
-rm /opt/framework-latest.tar.bz2
-echo "[+] Latest Metasploit Framework installed."
+aptitude -y install ruby irb ri rubygems libruby ruby-dev libpcap-dev nokogiri* libinsighttoolkit4.10 libz-dev  postgresql-common python3-postgresql  sqlite3 libsqlite3-dev
 
+cd /opt
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall
 
-# Install SET
-echo "[+] Installing latest SET framework ..."
-git clone https://github.com/trustedsec/social-engineer-toolkit/ /opt/set/
-cd src/pexpect-2.3/
-python setup.py install
-cd ../..
-echo "[+] SET framework installed in /opt."
-
-# Install SQLMAP
-#lets get the dev version of sqlmap - full of more awesomesauce.
-git clone https://github.com/sqlmapproject/sqlmap.git'/opt/sqlmap
-
-echo "[+] $HEADER pentesting tools installed."
-
-###################################################################################
-
-############################  8. PERL-PYTHON #####################################
-export HEADER=
-echo "[+] Installing $HEADER pentesting tools..."
-
-
-# Install Perl/Python tools 
-echo "[+] Installing Perl/Python tools ..."
-cp -a src/opt/ /
-chown -R root:root /opt/
-chmod +x /opt/cisco-auditing-tool/CAT
-chmod +x /opt/easy-creds/easy-creds.sh
-chmod +x /opt/goohost/goohost.sh
-chmod +x /opt/lbd/lbd.sh
-chmod +x /opt/sslstrip/sslstrip.py
-
-
-echo "[+] Perl/Python tools installed in /opt."
-
-
-
-echo "[+] Perl/Python tools installed in /opt."
 
 echo "[+] $HEADER pentesting tools installed."
 
@@ -251,7 +217,7 @@ echo "[+] $HEADER pentesting tools installed."
 
 ############################  9. #####################################
 export HEADER=
-echo "[+] Installing $HEADER pentesting tools..."
+echo "[+] Installing $HEADER tools suite..."
 
 #/bin/bash
 
@@ -264,6 +230,9 @@ mkdir -p /opt/$TIT/
 cd /opt/$TIT/
 
 toollist=(
+'https://github.com/sqlmapproject/sqlmap.git'
+'https://github.com/trustedsec/social-engineer-toolkit/'
+'https://github.com/D4Vinci/One-Lin3r.git'
 'https://github.com/ilneill/Py-CiscoT7.git'
 'https://github.com/rsmudge/cortana-scripts.git'
 'https://github.com/CoreSecurity/impacket.git'
@@ -365,7 +334,7 @@ echo "[+] $HEADER pentesting tools installed."
 
 ############################  10.DELIVERY #####################################
 export HEADER=
-echo "[+] Installing $HEADER pentesting tools..."
+echo "[+] Installing $HEADER tools suite..."
 
 
 
@@ -423,29 +392,19 @@ echo "[+] $HEADER pentesting tools installed."
 
 ###################################################################################
 
-############################  98. #####################################
-export HEADER=
-echo "[+] Installing $HEADER pentesting tools..."
+
+############################  APPLETS,EXTRAS #####################################
+export HEADER=APPLETS
+echo "[+] Installing $HEADER ..."
+
+# install  SONAR screensaver
+apt-get install -y xscreensaver-gl-extra rss-glx
+
+TBU config
 
 
 
-
-
-
-echo "[+] $HEADER pentesting tools installed."
-
-###################################################################################
-
-############################  99. #####################################
-export HEADER=
-echo "[+] Installing $HEADER pentesting tools..."
-
-
-
-
-
-
-echo "[+] $HEADER pentesting tools installed."
+echo "[+] $HEADER  installed."
 
 ###################################################################################
 
@@ -462,137 +421,6 @@ cp src/motd.tail.pwn /etc/motd
 
 
 ###################################################################################
-
-
-
-
-
-
-
-#################################################################################
-#Install Vmware 
-#################################################################################
-
-
-
-#################################################################################
-# Install Google Chrome
-#################################################################################
-
-
-
-#################################################################################
-# Install Chromium
-#################################################################################
-
-
-
-#################################################################################
-# Install Firefox
-#################################################################################
-
-
-			
-
-
-####################################################################
-#Install yamas
-#####################################################################
-
-			cd /tmp
-			wget http://comax.fr/yamas/bt5/yamas.sh
-			cp yamas.sh /usr/bin/yamas
-			chmod +x /usr/bin/yamas
-			rm yamas.sh
-			cd
-			echo "Script should now be installed. Launching it !"
-			sleep 3
-			gnome-terminal -t "Yamas" -x bash yamas 2>/dev/null & sleep 2
-			exit 1
-		
-
-
-
-
-
-####################################################################
-#Install pwnstar
-#####################################################################
-
-mkdir /opt/PwnSTAR_0.9
-cd /opt/PwnSTAR_0.9
-wget http://pwn-star.googlecode.com/files/PwnSTAR_0.9.tgz
-tar -zxvf PwnSTAR_0.9.tgz 
-mv hotspot_3 /var/www/ && mv portal_hotspot /var/www/ && mv portal_pdf /var/www/ && mv portal_simple /var/www/
-#rm $0
-echo "PwnStar should now be installed. Launching it !"
-sleep 3
-gnome-terminal -t "PwnStar" -e /opt/PwnSTAR_0.9/PwnSTAR_0.9 2>/dev/null & sleep 2
-pause
-sniffspoof
-exit 1
-
-
-###########################################################
-#simple-ducky
-#############################################################
-
-
-
-
-
-###############################################################
-# Install Veil-Framework
-###############################################################
-
-echo -e "\033[31m=========================== Installing Veil-Evasion ===============================\033[m"
-sleep 2
-apt-get update --force-yes
-apt-get --force-yes install veil-evasion 
-echo -e "\033[32m=============================== Done Installing ===============================\033[m"
-			
-
-
-######################################################################
-# Install maligno
-######################################################################
-
-echo -e "\e[1;31mMaligno is an open source penetration testing tool written in Python that serves Metasploit payloads. It generates shellcode with msfvenom and transmits it over HTTP or HTTPS. The shellcode is encrypted with AES and encoded prior to transmission.\e[0m"
-	
-echo -e "\033[31m====== Installing maligno ======\033[m"
-sleep 2
-rm -rf /opt/BypassAV/maligno/
-cd /opt/
-mkdir BypassAV/
-cd BypassAV/
-mkdir maligno/
-cd /opt/BypassAV/maligno/
-wget https://www.encripto.no/tools/maligno-2.2.tar.gz
-tar -zxvf maligno-2.2.tar.gz
-			
-
-
-
-
-######################################################################
-#  One-Lin3r
-######################################################################
-
-
-## 3.TOOLS INSTALL - V.6 #########################################
-
-
-
-#######################################################
-
-
-
-## 3.TOOLS INSTALL - V.7 #########################################
-
-
-
-#######################################################
-
 
 
 ## 4.EXTRAS #########################################
@@ -637,4 +465,6 @@ $ sudo apt-mark hold live-tools
 
 
 #######################################################
+
+
 
