@@ -79,7 +79,7 @@ echo "[+] Base system Devuan packages updated."
 echo "[+] Installing baseline pentesting tools/dependencies..."
 
 
-apt-get install -y telnet btscanner hostapd nmap dsniff nikto xprobe python-scapy wireshark tcpdump ettercap-graphical medusa macchanger nbtscan john ptunnel p0f ngrep tcpflow openvpn iodine httptunnel cryptcat sipsak smbclient sslsniff tcptraceroute netdiscover netmask udptunnel dnstracer sslscan medusa ipcalc dnswalk socat onesixtyone tinyproxy dmitry fcrackzip ssldump ike-scan darkstat swaks tcpreplay sipcrack proxychains proxytunnel siege skipfish libssl-dev libpcap-dev libpcre3 libpcre3-dev  libncurses-dev subversion python-twisted-web  iw mc zip links w3m lynx arj dbview odt2txt gv catdvi djvulibre-bin python-boto python-tz pkg-config screen hostapd dsniff ipcalc aircrack-ng gcc make re2c libnet-dns-perl libpcre3-dev php-cli php-dev php-curlphp-json ruby irb ri rubygems libruby ruby-dev libpcap-dev reaver netcat dirmngr  aptitude  ruby irb ri rubygems libruby ruby-dev libpcap-dev nokogiri* libinsighttoolkit4.10 libz-dev  postgresql-common python3-postgresql  sqlite3 libsqlite3-dev
+apt-get install -y telnet btscanner hostapd nmap zenmap dsniff nikto xprobe python-scapy wireshark tcpdump ettercap-graphical medusa macchanger nbtscan john ptunnel p0f ngrep tcpflow openvpn iodine httptunnel cryptcat sipsak smbclient sslsniff tcptraceroute netdiscover netmask udptunnel dnstracer sslscan medusa ipcalc dnswalk socat onesixtyone tinyproxy dmitry fcrackzip ssldump ike-scan darkstat swaks tcpreplay sipcrack proxychains proxytunnel siege skipfish libssl-dev libpcap-dev libpcre3 libpcre3-dev  libncurses-dev subversion python-twisted-web  iw mc zip links w3m lynx arj dbview odt2txt gv catdvi djvulibre-bin python-boto python-tz pkg-config screen hostapd dsniff ipcalc aircrack-ng gcc make re2c libnet-dns-perl libpcre3-dev php-cli php-dev php-curlphp-json ruby irb ri rubygems libruby ruby-dev libpcap-dev reaver netcat dirmngr  aptitude  ruby irb ri rubygems libruby ruby-dev libpcap-dev nokogiri* libinsighttoolkit4.10 libz-dev  postgresql-common python3-postgresql  sqlite3 libsqlite3-dev 
 
 apt-get update
 apt-get autoclean
@@ -230,92 +230,90 @@ mkdir -p /opt/$TIT/
 cd /opt/$TIT/
 
 toollist=(
-'https://github.com/sqlmapproject/sqlmap.git'
-'https://github.com/trustedsec/social-engineer-toolkit/'
-'https://github.com/D4Vinci/One-Lin3r.git'
-'https://github.com/ilneill/Py-CiscoT7.git'
-'https://github.com/rsmudge/cortana-scripts.git'
-'https://github.com/CoreSecurity/impacket.git'
-'https://github.com/ChrisTruncer/EyeWitness.git'
-'https://github.com/kussic/arlandria.git'
-'https://github.com/hatRiot/clusterd.git'
-'https://github.com/ytisf/PyExfil.git'
-'https://github.com/meefik/keystorebreaker.git'
-'https://github.com/ChrisTruncer/Egress-Assess.git'
-'https://github.com/viaMorgoth/opt-scripts.git'
-'https://github.com/viaMorgoth/Metasploit-Modules.git'
-'https://github.com/iagox86/dnscat2.git'
+
+'https://github.com/AeonDave/doork.git'
 'https://github.com/ahhh/Reverse_DNS_Shell.git'
-'https://github.com/PowerShellEmre/Emre.git'
-'https://github.com/Veil-Framework/Veil.git'
-'https://github.com/cernekee/stoken.git'
+'https://github.com/ajinabraham/Mobile-Security-Framework-MobSF.git'
+'https://github.com/AndroBugs/AndroBugs_Framework.git'
+'https://github.com/ant4g0nist/lisa.py.git'
+'https://github.com/bluscreenofjeff/AggressorScripts'
+'https://github.com/brav0hax/easy-creds.git'
+'https://github.com/byt3bl33d3r/DeathStar'
+'https://github.com/byt3bl33d3r/gcat.git'
+'https://github.com/byt3bl33d3r/MITMf.git'
+'https://github.com/byt3bl33d3r/pth-toolkit'
+'https://github.com/b3mb4m/shellsploit-framework.git'
+'https://github.com/CoreSecurity/impacket.git'
+'https://github.com/derv82/wifite2.git'
+'https://github.com/devilscream/litesploit.git'
+'https://github.com/devttys0/binwalk.git'
+'https://github.com/dismantl/linux-injector.git'
+'https://github.com/D4Vinci/One-Lin3r.git'
+'https://github.com/ElevenPaths/Eternalblue-Doublepulsar-Metasploit'
+'https://github.com/epinna/tplmap'
+'https://github.com/esc0rtd3w/wifi-hacker.git'
+'https://github.com/faizann24/XssPy.git'
+'https://github.com/federicodotta/Java-Deserialization-Scanner.git'
+'https://github.com/FluxionNetwork/fluxion'
+'https://github.com/gabemarshall/Brosec.git'
+'https://github.com/GDSSecurity/Windows-Exploit-Suggester.git'
+'https://github.com/g0tmi1k/mpc.git'
+'https://github.com/hatRiot/clusterd.git'
+'https://github.com/Hood3dRob1n/BinGoo.git'
+'https://github.com/chango77747/AdEnumerator.git'
+'https://github.com/ChrisTruncer/Egress-Assess.git'
+'https://github.com/ChrisTruncer/EyeWitness.git'
+'https://github.com/iagox86/dnscat2.git'
+'https://github.com/ilneill/Py-CiscoT7.git'
+'https://github.com/infobyte/evilgrade.git'
+'https://github.com/joaomatosf/jexboss.git'
+'https://github.com/johndekroon/serializekiller.git'
+'https://github.com/kernel-64/linset.git'
+'https://github.com/Kevin-Robertson/Invoke-TheHash'
+'https://github.com/kussic/arlandria.git'
+'https://github.com/LukaSikic/Unix-Privilege-Escalation-Exploits-Pack'
+'https://github.com/magisterquis/sshhipot.git'
+'https://github.com/mame82/P4wnP1.git'
+'https://github.com/mame82/P4wnP1_nexmon_additions'
+'https://github.com/mark-orion/STS-PiLot.git'
+'https://github.com/masterzen/winrm-cli'
+'https://github.com/meefik/keystorebreaker.git'
+'https://github.com/micheloosterhof/cowrie.git'
+'https://github.com/Mr-Un1k0d3r/PowerLessShell'
+'https://github.com/nccgroup/metasploitavevasion.git'
+'https://github.com/nccgroup/vlan-hopng---frogger.git'
+'https://github.com/PenturaLabs/Linux_Exploit_Suggester.git'
 'https://github.com/Raikia/CredNinja.git'
 'https://github.com/Raikia/SMBCrunch.git'
-'https://github.com/ajinabraham/Mobile-Security-Framework-MobSF.git'
-'https://github.com/dismantl/linux-injector.git'
-'https://github.com/gabemarshall/Brosec.git'
-'https://github.com/nccgroup/vlan-hopng---frogger.git'
-'https://github.com/torque59/Nosql-Exploitation-Framework.git'
-'https://github.com/OJ/gobuster.git'
-'https://github.com/joaomatosf/jexboss.git'
-'https://github.com/devttys0/binwalk.git'
-'https://github.com/sensepost/autoresponder.git'
-'https://github.com/torque59/Nosql-Exploitation-Framework.git'
-'https://github.com/adaptivethreat/EmPyre.git'
-'https://github.com/micheloosterhof/cowrie.git'
-'https://github.com/magisterquis/sshhipot.git'
-'https://github.com/deltaxflux/fluxion.git'
-'https://github.com/dafthack/MailSniper.git'
-'https://github.com/chango77747/AdEnumerator.git'
-'https://github.com/Kevin-Robertson/Invoke-TheHash'
-'https://github.com/johndekroon/serializekiller.git'
-'https://github.com/commixproject/commix'
-'https://github.com/scipag/vulscan'
-'https://github.com/scipag/btle-sniffer'
-'https://github.com/federicodotta/Java-Deserialization-Scanner.git'
-'https://github.com/Masterminds/sprig'
-'https://github.com/LukaSikic/Unix-Privilege-Escalation-Exploits-Pack'
 'https://github.com/rasta-mouse/Aggressor-Script'
-'https://github.com/bluscreenofjeff/AggressorScripts'
-'https://github.com/masterzen/winrm-cli'
-'https://github.com/byt3bl33d3r/DeathStar'
-'https://github.com/byt3bl33d3r/pth-toolkit'
-'https://github.com/Mr-Un1k0d3r/PowerLessShell'
-'https://github.com/RUB-NDS/PRET'
-'https://github.com/ElevenPaths/Eternalblue-Doublepulsar-Metasploit'
-'https://github.com/JonathanSalwan/ROPgadget'
-'https://github.com/LukaSikic/Unix-Privilege-Escalation-Exploits-Pack'
-'https://github.com/reyammer/shellnoob'
-'https://github.com/kernel-64/linset.git'
-'https://github.com/SilentGhostX/HT-WPS-Breaker.git'
-'https://github.com/Tle7839/wifiphiser.git'
-'https://github.com/deltaxflux/fluxion.git'
-'https://github.com/esc0rtd3w/wifi-hacker.git'
-'https://github.com/derv82/wifite.git'
-'https://github.com/vnik5287/wpa-autopwn.git'
-'https://github.com/offensive-security/exploit-database.git'
-'https://github.com/byt3bl33d3r/MITMf.git'
-'https://github.com/Hypsurus/weeman.git'
-'https://github.com/brav0hax/easy-creds.git'
-'https://github.com/screetsec/Pateensy.git'
-'https://github.com/trustedsec/unicorn.git'
-'https://github.com/g0tmi1k/mpc.git'
-'https://github.com/b3mb4m/shellsploit-framework.git'
 'https://github.com/reverse-shell/routersploit.git'
-'https://github.com/GDSSecurity/Windows-Exploit-Suggester.git'
-'https://github.com/PenturaLabs/Linux_Exploit_Suggester.git'
-'https://github.com/devilscream/litesploit.git'
-'https://github.com/4shadoww/usploit.git'
-'https://github.com/faizann24/XssPy.git'
-'https://github.com/yehia-mamdouh/XSSYA.git'
-'https://github.com/AeonDave/doork.git'
-'https://github.com/sullo/nikto.git'
-'https://github.com/ant4g0nist/lisa.py.git'
-'https://github.com/Hood3dRob1n/BinGoo.git'
+'https://github.com/reyammer/shellnoob'
+'https://github.com/rsmudge/cortana-scripts.git'
+'https://github.com/RUB-NDS/PRET'
+'https://github.com/samyk/poisontap'
+'https://github.com/scipag/btle-sniffer'
+'https://github.com/SECFORCE/sparta'
 'https://github.com/secretsquirrel/the-backdoor-factory.git'
-'https://github.com/nccgroup/metasploitavevasion.git'
-'https://github.com/byt3bl33d3r/gcat.git'
-)
+'https://github.com/sensepost/autoresponder.git'
+'https://github.com/SilentGhostX/HT-WPS-Breaker.git'
+'https://github.com/sqlmapproject/sqlmap.git'
+'https://github.com/sullo/nikto.git'
+'https://github.com/Tle7839/wifiphiser.git'
+'https://github.com/torque59/Nosql-Exploitation-Framework.git'
+'https://github.com/trustedsec/social-engineer-toolkit/'
+'https://github.com/trustedsec/unicorn.git'
+'https://github.com/Veil-Framework/Veil.git'
+'https://github.com/vnik5287/wpa-autopwn.git'
+'https://github.com/xtr4nge/FruityC2-Client.git'
+'https://github.com/xtr4nge/FruityC2.git'
+'https://github.com/xtr4nge/FruityWifi.git'
+'https://github.com/xtr4nge/giskismet.git'
+'https://github.com/xtr4nge/sslstrip.git'
+'https://github.com/yehia-mamdouh/XSSYA.git'
+'https://github.com/ytisf/PyExfil.git'
+'https://github.com/4shadoww/usploit.git'
+
+
 
 for repo in ${toollist[@]};do 
 {
@@ -412,9 +410,9 @@ echo "[+] $HEADER  installed."
 
 ############################### DEFACE ############################################
 
-# Update motd to show  Pwn release
+# Update motd to show  DEViiL release
 cp src/motd.tail.pwn /etc/motd.tail
-# Update motd for  user to show  Pwn release
+# Update motd for  user to show  DEViiL release
 cp src/motd.tail.pwn /etc/motd
 
 
@@ -425,7 +423,7 @@ cp src/motd.tail.pwn /etc/motd
 
 ## 4.EXTRAS #########################################
 
-https://github.com/mame82/P4wnP1.git
+
 
 
 
@@ -465,6 +463,5 @@ $ sudo apt-mark hold live-tools
 
 
 #######################################################
-
 
 
