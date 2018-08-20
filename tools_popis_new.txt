@@ -1,0 +1,82 @@
+
+'https://github.com/AeonDave/doork.git'												Passive Vulnerability Auditor 
+'https://github.com/ahhh/Reverse_DNS_Shell.git'										A python reverse shell that uses DNS as the c2 channel 
+'https://github.com/ajinabraham/Mobile-Security-Framework-MobSF.git' 				Mobile Security Framework is an automated, (Android/iOS/Windows) pen-testing framework 
+'https://github.com/AndroBugs/AndroBugs_Framework.git'								Adroid  checking framework
+'https://github.com/ant4g0nist/lisa.py.git'											An Exploit Dev Swiss Army Knife. 
+'https://github.com/bluscreenofjeff/AggressorScripts'								Collection of Aggressor Scripts for Cobalt Strike
+'https://github.com/brav0hax/easy-creds.git'										WIFI catch credits framework
+'https://github.com/byt3bl33d3r/DeathStar'											Automate getting Domain Admin using Empire
+'https://github.com/byt3bl33d3r/gcat.git'											A PoC backdoor that uses Gmail as a C&C server 
+'https://github.com/byt3bl33d3r/MITMf.git'											MITMf
+'https://github.com/byt3bl33d3r/pth-toolkit'										Pth-toolkit
+'https://github.com/b3mb4m/shellsploit-framework.git'								Shellsploit-Framework
+'https://github.com/CoreSecurity/impacket.git'										Impacket is a collection of Python classes for working with network protocols. 
+'https://github.com/derv82/wifite2.git'												Wifite2
+'https://github.com/devilscream/litesploit.git'										Litesploit is a library and intepreter for penetration testing tools. This includes exploits, tools and litepreter.
+'https://github.com/devttys0/binwalk.git'											BINWALK
+'https://github.com/dismantl/linux-injector.git'									Utility for injecting executable code into a running process on x86/x64 Linux 
+'https://github.com/D4Vinci/One-Lin3r.git'											MSF mini
+'https://github.com/ElevenPaths/Eternalblue-Doublepulsar-Metasploit'				Eternalblue-Doublepulsar-Metasploit
+'https://github.com/epinna/tplmap'													SERVER-TEMPLATE  mapper
+'https://github.com/esc0rtd3w/wifi-hacker.git'										Wifi-hacker
+'https://github.com/faizann24/XssPy.git'											XssPy - Web Application XSS Scanner
+'https://github.com/federicodotta/Java-Deserialization-Scanner.git'					Java-Deserialization-Scanner
+'https://github.com/FluxionNetwork/fluxion'			   								WIFI cracker and honeypot
+'https://github.com/gabemarshall/Brosec.git'										Brosec - An interactive reference tool to help security professionals utilize useful payloads and commands. 
+'https://github.com/GDSSecurity/Windows-Exploit-Suggester.git'						Windows-Exploit-Suggester
+'https://github.com/g0tmi1k/mpc.git'												MSFvenom Payload Creato
+'https://github.com/hatRiot/clusterd.git'											Application server attack toolkit
+'https://github.com/Hood3dRob1n/BinGoo.git'											BinGoo! A Linux bash based Bing and Google Dorking Tool 
+'https://github.com/chango77747/AdEnumerator.git'									AdEnumerator
+'https://github.com/ChrisTruncer/Egress-Assess.git'									Egress-Assess is a tool used to test egress data detection capabilities.
+'https://github.com/ChrisTruncer/EyeWitness.git'									Eyewitness screenshoter
+'https://github.com/iagox86/dnscat2.git'											Welcome to dnscat2, a DNS tunnel that WON'T make you sick and kill you!
+'https://github.com/ilneill/Py-CiscoT7.git'   										Python program to encrypt and decrypt Cisco Type 7 passwords.
+'https://github.com/infobyte/evilgrade.git'											Bdfmitmf
+'https://github.com/joaomatosf/jexboss.git'											JexBoss: Jboss (and Java Deserialization Vulnerabilities) verify and EXploitation Tool 
+'https://github.com/johndekroon/serializekiller.git'								Serializekiller
+'https://github.com/kernel-64/linset.git'											Linset is a social engineering tool based on MITM to check the security (or ignorance) of the clients in our wireless network.
+'https://github.com/Kevin-Robertson/Invoke-TheHash'									Invoke-TheHash
+'https://github.com/kussic/arlandria.git'											Simple LinkedIn scrapper for OSINT
+'https://github.com/LukaSikic/Unix-Privilege-Escalation-Exploits-Pack'				Unix-Privilege-Escalation-Exploits-Pack
+'https://github.com/magisterquis/sshhipot.git'										High-interaction MitM SSH honeypot 
+'https://github.com/mame82/P4wnP1.git'												P4wnP1 is a highly customizable USB attack platform
+'https://github.com/mame82/P4wnP1_nexmon_additions'									P4wnP1 nexmon
+'https://github.com/mark-orion/STS-PiLot.git'										AJAX remote control web interface with live video for the Pimoroni STS-Pi 
+'https://github.com/masterzen/winrm-cli'											Command-line tool to remotely execute commands on Windows machines through WinRM
+'https://github.com/meefik/keystorebreaker.git'										Password guessing to Java keystore 
+'https://github.com/micheloosterhof/cowrie.git'										Cowrie SSH/Telnet Honeypot 
+'https://github.com/Mr-Un1k0d3r/PowerLessShell'										Run PowerShell command without invoking powershell.exe 
+'https://github.com/nccgroup/metasploitavevasion.git'								Metasploitavevasion
+'https://github.com/nccgroup/vlan-hopng---frogger.git'								Vlan-hopng
+'https://github.com/PenturaLabs/Linux_Exploit_Suggester.git'						Linux_Exploit_Suggester
+'https://github.com/Raikia/CredNinja.git'											A multithreaded tool identify if credentials within a network at-scale via SMB, plus now with a user hunter 
+'https://github.com/Raikia/SMBCrunch.git'											3 tools that work together to simplify reconaissance of Windows File Shares 
+'https://github.com/rasta-mouse/Aggressor-Script'									Collection of Aggressor Scripts for Cobalt Strike
+'https://github.com/reverse-shell/routersploit.git'									RouterSploit - Exploitation Framework for Embedded Devices
+'https://github.com/reyammer/shellnoob'												A shellcode writing toolkit 
+'https://github.com/rsmudge/cortana-scripts.git'									CORTANA for armitage
+'https://github.com/RUB-NDS/PRET'													Printer Exploitation Toolkit - The tool that made dumpster diving obsolete. 
+'https://github.com/samyk/poisontap'												USB POISON HID
+'https://github.com/scipag/btle-sniffer'											Btle-sniffer
+'https://github.com/SECFORCE/sparta'												Network Infrastructure Penetration Testing Tool 
+'https://github.com/secretsquirrel/the-backdoor-factory.git'						The-backdoor-factory
+'https://github.com/sensepost/autoresponder.git'									Quick python script to automatically load NTLM hashes from Responder logs and fires up Hashcat to crack them 
+'https://github.com/SilentGhostX/HT-WPS-Breaker.git'								High Touch WPS Breaker
+'https://github.com/sqlmapproject/sqlmap.git'										SQLMAP-DEV
+'https://github.com/sullo/nikto.git'												Nikto
+'https://github.com/Tle7839/wifiphiser.git'											Wfiphiser
+'https://github.com/torque59/Nosql-Exploitation-Framework.git'						Nosql-Exploitation-Framework
+'https://github.com/trustedsec/social-engineer-toolkit/'							SET
+'https://github.com/trustedsec/unicorn.git'											Unicorn is a simple tool for using a PowerShell downgrade attack and inject shellcode straight into memory
+'https://github.com/Veil-Framework/Veil.git'										Veil is a tool designed to generate metasploit payloads that bypass common anti-virus solutions.
+'https://github.com/vnik5287/wpa-autopwn.git'										Wpa-autopwn
+'https://github.com/xtr4nge/FruityC2-Client.git'									FruityC2 - command center client
+'https://github.com/xtr4nge/FruityC2.git'											FruityC2 - command center
+'https://github.com/xtr4nge/FruityWifi.git'											FruityWiFi is a wireless network auditing tool.
+'https://github.com/xtr4nge/giskismet.git'											giskismet – Wireless recon visualization tool 
+'https://github.com/xtr4nge/sslstrip.git'											A tool for exploiting Moxie Marlinspike's SSL stripping attack.
+'https://github.com/yehia-mamdouh/XSSYA.git'										XSSYA (Cross Site Scripting Scanner & Vulnerability Confirmation) 
+'https://github.com/ytisf/PyExfil.git'												A Python Package for Data Exfiltration
+'https://github.com/4shadoww/usploit.git'											Hakku Framework penetration testing 
