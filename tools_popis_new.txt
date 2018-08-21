@@ -3,11 +3,8 @@
 'https://github.com/ahhh/Reverse_DNS_Shell.git'										A python reverse shell that uses DNS as the c2 channel 
 'https://github.com/ajinabraham/Mobile-Security-Framework-MobSF.git' 				Mobile Security Framework is an automated, (Android/iOS/Windows) pen-testing framework 
 'https://github.com/AndroBugs/AndroBugs_Framework.git'								Adroid  checking framework
-'https://github.com/ant4g0nist/lisa.py.git'											An Exploit Dev Swiss Army Knife. 
-'https://github.com/bluscreenofjeff/AggressorScripts'								Collection of Aggressor Scripts for Cobalt Strike
 'https://github.com/brav0hax/easy-creds.git'										WIFI catch credits framework
 'https://github.com/byt3bl33d3r/DeathStar'											Automate getting Domain Admin using Empire
-'https://github.com/byt3bl33d3r/gcat.git'											A PoC backdoor that uses Gmail as a C&C server 
 'https://github.com/byt3bl33d3r/MITMf.git'											MITMf
 'https://github.com/byt3bl33d3r/pth-toolkit'										Pth-toolkit
 'https://github.com/b3mb4m/shellsploit-framework.git'								Shellsploit-Framework
@@ -23,9 +20,10 @@
 'https://github.com/faizann24/XssPy.git'											XssPy - Web Application XSS Scanner
 'https://github.com/federicodotta/Java-Deserialization-Scanner.git'					Java-Deserialization-Scanner
 'https://github.com/FluxionNetwork/fluxion'			   								WIFI cracker and honeypot
+'https://gitlab.com/peacengell/FruityWifi.git'										FRUITY-WIFi
 'https://github.com/gabemarshall/Brosec.git'										Brosec - An interactive reference tool to help security professionals utilize useful payloads and commands. 
 'https://github.com/GDSSecurity/Windows-Exploit-Suggester.git'						Windows-Exploit-Suggester
-'https://github.com/g0tmi1k/mpc.git'												MSFvenom Payload Creato
+'https://github.com/g0tmi1k/mpc.git'												MSFvenom Payload Creator
 'https://github.com/hatRiot/clusterd.git'											Application server attack toolkit
 'https://github.com/Hood3dRob1n/BinGoo.git'											BinGoo! A Linux bash based Bing and Google Dorking Tool 
 'https://github.com/chango77747/AdEnumerator.git'									AdEnumerator
@@ -53,7 +51,6 @@
 'https://github.com/PenturaLabs/Linux_Exploit_Suggester.git'						Linux_Exploit_Suggester
 'https://github.com/Raikia/CredNinja.git'											A multithreaded tool identify if credentials within a network at-scale via SMB, plus now with a user hunter 
 'https://github.com/Raikia/SMBCrunch.git'											3 tools that work together to simplify reconaissance of Windows File Shares 
-'https://github.com/rasta-mouse/Aggressor-Script'									Collection of Aggressor Scripts for Cobalt Strike
 'https://github.com/reverse-shell/routersploit.git'									RouterSploit - Exploitation Framework for Embedded Devices
 'https://github.com/reyammer/shellnoob'												A shellcode writing toolkit 
 'https://github.com/rsmudge/cortana-scripts.git'									CORTANA for armitage
@@ -80,3 +77,22 @@
 'https://github.com/yehia-mamdouh/XSSYA.git'										XSSYA (Cross Site Scripting Scanner & Vulnerability Confirmation) 
 'https://github.com/ytisf/PyExfil.git'												A Python Package for Data Exfiltration
 'https://github.com/4shadoww/usploit.git'											Hakku Framework penetration testing 
+'https://github.com/MooseDojo/apt2.git'												Automated penetration toolkit 
+
+
+
+
+www
+
+'https://github.com/ChrisTruncer/WMIOps.git'										This repo is for WMIOps, a powershell script which uses WMI for various purposes across a network. 
+'https://github.com/byt3bl33d3r/CrackMapExec.git'									CrackMapExec
+'https://github.com/Kevin-Robertson/Inveigh.git'									Inveigh is a Windows PowerShell LLMNR/mDNS/NBNS spoofer/man-in-the-middle tool 
+'https://github.com/secabstraction/Create-WMIshell.git'								Create-WMIshell
+'https://github.com/secabstraction/WmiSploit.git'									WmiSploit
+'https://github.com/PowerShellMafia/PowerSploit.git'								PowerSploit - A PowerShell Post-Exploitation Framework 
+'https://github.com/samratashok/nishang.git'										Nishang - Offensive PowerShell Framework for penetration testing and offensive security. 
+'https://github.com/besimorhino/powercat.git'										Netcat: The powershell version. (Powershell Version 2 and Later Supported)
+'https://github.com/Arvanaghi/SessionGopher-Arvanaghi'								Get some WinSCP, PuTTY, SuperPuTTY, FileZilla, and Microsoft Remote Desktop creds
+'https://github.com/xorrior/RandomPS-Scripts'										PowerShell Scripts focused on Post-Exploitation Capabilities 
+'https://github.com/dafthack/HostRecon'												This function runs a number of checks on a system
+'https://github.com/dafthack/DomainPasswordSpray'									DomainPasswordSpray is a tool written in PowerShell to perform a password spray attack against users of a domain
