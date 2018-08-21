@@ -231,16 +231,12 @@ mkdir -p /opt/$TIT/
 cd /opt/$TIT/
 
 toollist=(
-
 'https://github.com/AeonDave/doork.git'
 'https://github.com/ahhh/Reverse_DNS_Shell.git'
 'https://github.com/ajinabraham/Mobile-Security-Framework-MobSF.git'
 'https://github.com/AndroBugs/AndroBugs_Framework.git'
-'https://github.com/ant4g0nist/lisa.py.git'
-'https://github.com/bluscreenofjeff/AggressorScripts'
 'https://github.com/brav0hax/easy-creds.git'
 'https://github.com/byt3bl33d3r/DeathStar'
-'https://github.com/byt3bl33d3r/gcat.git'
 'https://github.com/byt3bl33d3r/MITMf.git'
 'https://github.com/byt3bl33d3r/pth-toolkit'
 'https://github.com/b3mb4m/shellsploit-framework.git'
@@ -286,7 +282,6 @@ toollist=(
 'https://github.com/PenturaLabs/Linux_Exploit_Suggester.git'
 'https://github.com/Raikia/CredNinja.git'
 'https://github.com/Raikia/SMBCrunch.git'
-'https://github.com/rasta-mouse/Aggressor-Script'
 'https://github.com/reverse-shell/routersploit.git'
 'https://github.com/reyammer/shellnoob'
 'https://github.com/rsmudge/cortana-scripts.git'
@@ -313,6 +308,8 @@ toollist=(
 'https://github.com/yehia-mamdouh/XSSYA.git'
 'https://github.com/ytisf/PyExfil.git'
 'https://github.com/4shadoww/usploit.git'
+'https://github.com/MooseDojo/apt2.git'
+
 
 
 
@@ -353,25 +350,18 @@ cd /var/www/html/$TIT
 
 wwwlist=(
 'https://github.com/ChrisTruncer/WMIOps.git'
-'https://github.com/viaMorgoth/Veil-PowerView.git'
 'https://github.com/byt3bl33d3r/CrackMapExec.git'
-'https://github.com/darkoperator/Posh-SecMod.git'
 'https://github.com/Kevin-Robertson/Inveigh.git'
 'https://github.com/secabstraction/Create-WMIshell.git'
 'https://github.com/secabstraction/WmiSploit.git'
 'https://github.com/PowerShellMafia/PowerSploit.git'
-'https://github.com/PowerShellEmre/PowerTools.git'
 'https://github.com/samratashok/nishang.git'
 'https://github.com/besimorhino/powercat.git'
-'https://github.com/darkoperator/Posh-SSH.git'
-'https://github.com/adaptivethreat/KeeThief.git'
 'https://github.com/Arvanaghi/SessionGopher-Arvanaghi'
 'https://github.com/xorrior/RandomPS-Scripts'
 'https://github.com/dafthack/HostRecon'
 'https://github.com/dafthack/DomainPasswordSpray'
-'https://github.com/GoFetchAD/GoFetch'
-'https://github.com/Mr-Un1k0d3r/RC4-PowerShell-RAT'
-'https://github.com/killswitch-GUI/Persistence-Survivability'
+
 )
 
 
