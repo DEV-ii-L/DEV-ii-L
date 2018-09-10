@@ -32,17 +32,7 @@ deb http://cz.deb.devuan.org/merged ascii-security main
 #######################################################
 
 
-
-## 2.DEPS & FIXES #########################################
-
-
-
-
-
-
-#######################################################
-
-## 3.TOOLS INSTALL - V.1 #########################################
+## 2.TOOLS INSTALL  #########################################
 
 #!/bin/bash
 echo ""
@@ -66,7 +56,7 @@ echo ""
 echo ""
 
 # Make sure all installer files are owned by root
-chown -R root:root .
+#chown -R root:root .
 
 
 #############################   APT-GET  a  APTITUDE #############################
@@ -76,40 +66,17 @@ aptitude -y update  && aptitude -y upgrade
 echo "[+] Base system Devuan packages updated."
 
 
-# Install baseline  tools 
-echo "[+] Installing baseline tools..."
-
-apt-get install midori chromium firefox-esr thunderbird  pidgin
 
 
-# Install baseline pentesting tools via aptitude
+# Install baseline pentesting tools via apt
 echo "[+] Installing baseline pentesting tools/dependencies..."
 
 
-apt-get install -y aircrack-ng aptitude arj btscanner catdvi cryptcat darkstat dbview dirmngr djvulibre-bin dmitry dnstracer dnswalk dsniff ettercap-graphical fcrackzip gcc gv hostapd httptunnel ike-scan iodine ipcalc irb iw john libinsighttoolkit4.10 libncurses-dev libnet-dns-perl libpcap-dev libpcre3 libpcre3-dev libruby libsqlite3-dev libssl-dev libz-dev links lynx macchanger make mc medusa nbtscan netcat netdiscover netmask ngrep nikto nmap nokogiri* odt2txt onesixtyone openvpn php-cli php-curlphp-json php-dev pkg-config postgresql-common proxychains proxytunnel ptunnel python-boto python-scapy python-twisted-web python-tz python3-postgresql p0f reaver re2c ri ruby ruby-dev rubygems screen siege sipcrack sipsak skipfish smbclient socat sqlite3 ssldump sslscan sslsniff subversion swaks tcpdump tcpflow tcpreplay tcptraceroute telnet tinyproxy udptunnel wireshark w3m xprobe zenmap zip 
+apt-get install -y aircrack-ng aptitude arj btscanner catdvi cryptcat darkstat dbview dirmngr djvulibre-bin dmitry dnstracer dnswalk dsniff ettercap-graphical fcrackzip gcc gv hostapd httptunnel ike-scan iodine ipcalc irb iw john libinsighttoolkit4.10 libncurses-dev libnet-dns-perl libpcap-dev libpcre3 libpcre3-dev libruby libsqlite3-dev libssl-dev libz-dev links lynx macchanger make mc medusa nbtscan netcat netdiscover netmask ngrep nikto nmap nokogiri* odt2txt onesixtyone openvpn php-cli php-curlphp-json php-dev pkg-config postgresql-common proxychains proxytunnel ptunnel python-boto python-scapy python-twisted-web python-tz python3-postgresql p0f reaver re2c ri ruby ruby-dev rubygems screen siege sipcrack sipsak skipfish smbclient socat sqlite3 ssldump sslscan sslsniff subversion swaks tcpdump tcpflow tcpreplay tcptraceroute telnet tinyproxy udptunnel wireshark w3m xprobe zenmap zip midori chromium firefox-esr thunderbird  pidgin
 
 
 apt-get update
 apt-get autoclean
-
-
-############################
-#
-# switch to kali apt-get repository with KAOOLIN
-#
-############################
-cp /etc/apt/sources.list /etc/apt/sources.list_devuan
-
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ED444FF07D8D0BF6
-
-
-cd /opt/
-git clone https://github.com/LionSec/katoolin.git
-cd ./katoolin
-python ./katoolin.py
-
-
-echo "[+] Baseline pentesting tools installed."
 
 
 # Remove unneeded statup items
@@ -119,16 +86,11 @@ update-rc.d -f ntp remove
 apt-get -y purge portmap
 apt-get -y autoremove gdm
 apt-get -y autoremove
+apt-get update
+apt-get autoclean
 echo "[+] Unneeded startup items removed."
 
-############################
-#
-# switch back FROM KAOOLIN to DEVUAN
-#
-############################
-cp  /etc/apt/sources.list /etc/apt/sources.list_with_kali
-rm /etc/apt/sources.list
-cp /etc/apt/sources.list_devuan /etc/apt/sources.list
+
 
 
 ###################################################################################
@@ -143,7 +105,7 @@ https://www.microsoft.com/cs-cz/software-download/windows10ISO
 ###################################################################################
 
 cd /opt/
-git clone  https://github.com/DEV-ii-L/DEV-ii-L/tree/master/INSTALL ./
+git clone  https://github.com/DEV-ii-L/DEV-ii-L/INSTALLS/  
 
 
 
@@ -190,7 +152,6 @@ echo "[+] $HEADER pentesting tools installed."
 
 
 ###################################################################################
-
 
 
 ############################  APPLETS,EXTRAS #####################################
