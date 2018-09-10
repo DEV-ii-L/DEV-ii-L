@@ -135,23 +135,48 @@ echo "[+] Installing $HEADER tools suite..."
 
 
 #################################################################################
-# Install Google Chrome
+# Install Midori browser
 #################################################################################
 
-
+apt-get install midori
 
 #################################################################################
 # Install Chromium
 #################################################################################
 
-
+apt-get install chromium 
 
 #################################################################################
 # Install Firefox
 #################################################################################
 
-
+apt-get install firefox-esr
 		
+
+#################################################################################
+# Install Thunderbird
+#################################################################################
+
+apt-get install thunderbird
+
+
+#################################################################################
+# Install  OPENVAS  + GBSA
+#################################################################################
+
+apt-get install -y greenbone-security-assistant openvas*
+openvasmd --create_user ii
+openvassmd  --user=ii  --new_password=ii
+openvas-mkcert
+openvas-mkcert-client
+cp /tmp/open*/cert_oem.pem  /var/lib/openvaas/CA/clientcert.pem
+cp /tmp/open*/key_oem.pem /var/lib/openvas/private/CA/clientkey.pem
+
+openvas-nvt-sync
+openvas-scapdata-sync
+openvas-certdata-sync
+
+
 echo "[+] $HEADER pentesting tools installed."
 
 ###################################################################################
@@ -197,6 +222,7 @@ cd /opt/$TIT/
 
 toollist=(
 'https://github.com/AeonDave/doork.git'
+'https://github.com/danielwhite84/Auto-Hacking-USB'
 'https://github.com/ahhh/Reverse_DNS_Shell.git'
 'https://github.com/ajinabraham/Mobile-Security-Framework-MobSF.git'
 'https://github.com/AndroBugs/AndroBugs_Framework.git'
@@ -506,5 +532,7 @@ $ sudo apt-mark hold live-tools
 
 
 #######################################################
+
+
 
 
