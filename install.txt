@@ -142,6 +142,13 @@ https://www.microsoft.com/cs-cz/software-download/windows10ISO
 
 ###################################################################################
 
+cd /opt/
+git clone  https://github.com/DEV-ii-L/DEV-ii-L/INSTALLS/  
+
+
+
+
+
 
 ############################  7. FRAMEWORK #####################################
 export HEADER=FRAMEWORK
@@ -182,181 +189,18 @@ openvas-certdata-sync
 echo "[+] $HEADER pentesting tools installed."
 
 
-
-echo "[+] $HEADER pentesting tools installed."
-
 ###################################################################################
 
-############################  9. #####################################
-export HEADER=
-echo "[+] Installing $HEADER tools suite..."
 
-#/bin/bash
-
-# This script sets up a directory. 
-# The $TIT directory which contains tools that we often use on pentests. 
-
-export TIT=
-
-mkdir -p /opt/$TIT/
-cd /opt/$TIT/
-
-toollist=(
-'https://github.com/AA'
-.
-.
-'https://github.com/ZZ'
-
-##################################################################################
-
-WINDOWS
-
-https://github.com/byt3bl33d3r/DeathStar
-https://github.com/byt3bl33d3r/pth-toolkit
-https://github.com/CoreSecurity/impacket
-https://github.com/GDSSecurity/Windows-Exploit-Suggester.git
-https://github.com/chango77747/AdEnumerator.git
-https://github.com/Kevin-Robertson/Invoke-TheHash
-https://github.com/masterzen/winrm-cli
-https://github.com/Raikia/SMBCrunch.git
-https://github.com/Raikia/CredNinja.git
-https://github.com/gentilkiwi/mimikatz.git
-https://github.com/byt3bl33d3r/CrackMapExec.git
-
-
-
-LINUX
-
-https://github.com/dismantl/linux-injector
-https://github.com/iagox86/dnscat2.git
-https://github.com/LukaSikic/Unix-Privilege-Escalation-Exploits-Pack
-https://github.com/PenturaLabs/Linux_Exploit_Suggester.git
-
-
-WIFI
-
-https://github.com/derv82/wifite2.git
-https://github.com/esc0rtd3w/wifi-hacker.git
-https://github.com/Tle7839/wifiphiser.git
-https://github.com/SilentGhostX/HT-WPS-Breaker.git
-https://github.com/vnik5287/wpa-autopwn.git
-https://github.com/xtr4nge/giskismet.git
-https://github.com/scipag/btle-sniffer
-
-
-
-
-OWASP
-https://github.com/hatRiot/clusterd
-https://github.com/epinna/tplmap
-https://github.com/faizann24/XssPy.git
-https://github.com/federicodotta/Java-Deserialization-Scanner.git
-https://github.com/joaomatosf/jexboss.git
-https://github.com/johndekroon/serializekiller.git
-https://github.com/sqlmapproject/sqlmap.git
-https://github.com/sullo/nikto.git
-https://github.com/yehia-mamdouh/XSSYA.git
-https://github.com/meefik/keystorebreaker
-
-
-PHISHING
-
-https://github.com/Hood3dRob1n/BinGoo
-https://github.com/AeonDave/doork.git
-
-MOBILE
-
-https://github.com/ajinabraham/Mobile-Security-Framework-MobSF.git
-https://github.com/AndroBugs/AndroBugs_Framework.git
-
-
-FRAMEWORKS
-
-https://github.com/devilscream/litesploit.git
-https://github.com/D4Vinci/One-Lin3r.git
-https://github.com/ElevenPaths/Eternalblue-Doublepulsar-Metasploit
-https://github.com/FluxionNetwork/fluxion
-https://github.com/gabemarshall/Brosec
-https://github.com/g0tmi1k/mpc.git
-https://github.com/infobyte/evilgrade.git !!!!!!!!!!!!!!!!!!!!!!!!!!!
-https://github.com/kernel-64/linset.git
-https://github.com/Mr-Un1k0d3r/PowerLessShell
-https://github.com/nccgroup/metasploitavevasion.git
-https://github.com/secretsquirrel/the-backdoor-factory.git
-https://github.com/trustedsec/social-engineer-toolkit/
-https://github.com/torque59/Nosql-Exploitation-Framework.git
-https://github.com/trustedsec/unicorn.git
-https://github.com/Veil-Framework/Veil.git
-https://github.com/4shadoww/usploit.git
-https://github.com/MooseDojo/apt2.git
-https://github.com/reyammer/shellnoob
-
-
-NETWORK
-
-https://github.com/ilneill/Py-CiscoT7.git
-https://github.com/nccgroup/vlan-hopng---frogger.git
-https://github.com/reverse-shell/routersploit.git
-https://github.com/SECFORCE/sparta
-https://github.com/sensepost/autoresponder.git
-https://github.com/brav0hax/easy-creds.git
-https://github.com/byt3bl33d3r/MITMf.git
-https://github.com/xtr4nge/sslstrip.git
-
-REPORTING
-
-https://github.com/ChrisTruncer/EyeWitness.git
-
-
-
-C2C
-
-https://github.com/xtr4nge/FruityC2-Client.git
-https://github.com/xtr4nge/FruityC2.git
-https://github.com/xtr4nge/FruityWifi.git
-https://github.com/ahhh/Reverse_DNS_Shell.git
-https://github.com/ytisf/PyExfil.git
-
-GADGETS
-
-https://github.com/mame82/P4wnP1.git
-https://github.com/samyk/poisontap
-https://github.com/danielwhite84/Auto-Hacking-USB
-
-ROBO
-https://github.com/mark-orion/STS-PiLot.git
-
-
-PRINTERS
-https://github.com/RUB-NDS/PRET
-
-
-
-##################################################################################
-
-
-for repo in ${toollist[@]};do 
-{
-git clone $repo; } || {
-dir=${repo##*/}
-dir=${dir%.*}
-cd $dir
-git pull origin master
-cd ..
-}
-done
-
-echo "[+] $HEADER pentesting tools installed."
-
-###################################################################################
 
 ############################  10.DELIVERY #####################################
-export HEADER=
+
+
+#!/bin/bash
+export HEADER=WWW
 echo "[+] Installing $HEADER tools suite..."
 
 
-
-#/bin/bash
 
 # This script sets up a directory. 
 
@@ -365,10 +209,8 @@ echo "[+] Installing $HEADER tools suite..."
 
 
 
-export TIT=
 
-mkdir -p /var/www/html/$TIT/
-cd /var/www/html/$TIT
+cd /var/www/html/
 
 wwwlist=(
 'https://github.com/ChrisTruncer/WMIOps.git'
@@ -399,7 +241,7 @@ cd ..
 done
 
 
-echo "[+] $HEADER pentesting tools installed."
+echo "[+] $HEADER  tools installed."
 
 ###################################################################################
 
