@@ -75,11 +75,18 @@ chown -R root:root .
 aptitude -y update  && aptitude -y upgrade
 echo "[+] Base system Devuan packages updated."
 
+
+# Install baseline  tools 
+echo "[+] Installing baseline tools..."
+
+apt-get install midori chromium firefox-esr thunderbird  pidgin
+
+
 # Install baseline pentesting tools via aptitude
 echo "[+] Installing baseline pentesting tools/dependencies..."
 
 
-apt-get install -y aircrack-ng aptitude arj btscanner catdvi cryptcat darkstat dbview dirmngr djvulibre-bin dmitry dnstracer dnswalk dsniff ettercap-graphical fcrackzip gcc gv hostapd httptunnel ike-scan iodine ipcalc irb iw john libinsighttoolkit4.10 libncurses-dev libnet-dns-perl libpcap-dev libpcre3 libpcre3-dev libruby libsqlite3-dev libssl-dev libz-dev links lynx macchanger make mc medusa nbtscan netcat netdiscover netmask ngrep nikto nmap nokogiri* odt2txt onesixtyone openvpn php-cli php-curlphp-json php-dev pkg-config postgresql-common proxychains proxytunnel ptunnel python-boto python-scapy python-twisted-web python-tz python3-postgresql p0f reaver re2c ri ruby ruby-dev rubygems screen siege sipcrack sipsak skipfish smbclient socat sqlite3 ssldump sslscan sslsniff subversion swaks tcpdump tcpflow tcpreplay tcptraceroute telnet tinyproxy udptunnel wireshark w3m xprobe zenmap zip
+apt-get install -y aircrack-ng aptitude arj btscanner catdvi cryptcat darkstat dbview dirmngr djvulibre-bin dmitry dnstracer dnswalk dsniff ettercap-graphical fcrackzip gcc gv hostapd httptunnel ike-scan iodine ipcalc irb iw john libinsighttoolkit4.10 libncurses-dev libnet-dns-perl libpcap-dev libpcre3 libpcre3-dev libruby libsqlite3-dev libssl-dev libz-dev links lynx macchanger make mc medusa nbtscan netcat netdiscover netmask ngrep nikto nmap nokogiri* odt2txt onesixtyone openvpn php-cli php-curlphp-json php-dev pkg-config postgresql-common proxychains proxytunnel ptunnel python-boto python-scapy python-twisted-web python-tz python3-postgresql p0f reaver re2c ri ruby ruby-dev rubygems screen siege sipcrack sipsak skipfish smbclient socat sqlite3 ssldump sslscan sslsniff subversion swaks tcpdump tcpflow tcpreplay tcptraceroute telnet tinyproxy udptunnel wireshark w3m xprobe zenmap zip 
 
 
 apt-get update
@@ -129,55 +136,6 @@ cp /etc/apt/sources.list_devuan /etc/apt/sources.list
 
 
 
-############################  6.BROWSERS #####################################
-export HEADER=BROWSERS
-echo "[+] Installing $HEADER tools suite..."
-
-
-#################################################################################
-# Install Midori browser
-#################################################################################
-
-apt-get install midori
-
-#################################################################################
-# Install Chromium
-#################################################################################
-
-apt-get install chromium 
-
-#################################################################################
-# Install Firefox
-#################################################################################
-
-apt-get install firefox-esr
-		
-
-#################################################################################
-# Install Thunderbird
-#################################################################################
-
-apt-get install thunderbird
-
-
-#################################################################################
-# Install  OPENVAS  + GBSA
-#################################################################################
-
-apt-get install -y greenbone-security-assistant openvas*
-openvasmd --create_user ii
-openvassmd  --user=ii  --new_password=ii
-openvas-mkcert
-openvas-mkcert-client
-cp /tmp/open*/cert_oem.pem  /var/lib/openvaas/CA/clientcert.pem
-cp /tmp/open*/key_oem.pem /var/lib/openvas/private/CA/clientkey.pem
-
-openvas-nvt-sync
-openvas-scapdata-sync
-openvas-certdata-sync
-
-
-echo "[+] $HEADER pentesting tools installed."
 
 ###################################################################################
 
@@ -199,6 +157,26 @@ cd /opt/infectionmonkey
 wget https://github.com/guardicore/monkey/releases/download/1.5.2/infection_monkey_1.5.2_deb.tgz
 tar -xvf ./infection_monkey_1.5.2_deb.tgz 
 dpkg --install ./monkey_island.deb
+
+
+#################################################################################
+# Install  OPENVAS  + GBSA
+#################################################################################
+
+apt-get install -y greenbone-security-assistant openvas*
+openvasmd --create_user ii
+openvassmd  --user=ii  --new_password=ii
+openvas-mkcert
+openvas-mkcert-client
+cp /tmp/open*/cert_oem.pem  /var/lib/openvaas/CA/clientcert.pem
+cp /tmp/open*/key_oem.pem /var/lib/openvas/private/CA/clientkey.pem
+
+openvas-nvt-sync
+openvas-scapdata-sync
+openvas-certdata-sync
+
+
+echo "[+] $HEADER pentesting tools installed."
 
 
 
@@ -408,92 +386,11 @@ cp src/motd.tail.pwn /etc/motd
 
 Supported Wireless Cards
 
-3COM 3CRUSB10075
-7DayShop W-3S01BLK
-Alfa AWUS036NEH
 Alfa AWUS036NH
-Alfa AWUS036H
-Alfa AWUS036H
-Alfa AWUS036NHA
-AirLink101 AWLL5088
-Asus USB-N10
-Asus USB-N13
-Asus WL-167G v1
-Asus WL-167G v3
-AusPi Technologies WiFi Adapter
-Belkin F5D7050 v3000
-Belkin F5D8053 ver6001
-Belkin F5D8053 ver6001
-Belkin F7D1101 v1
-Belkin F7D2102 N300 Micro
-Belkin F9L1001v1 N150
-Belkin Surf Micro
-BlueProton BT3
-Buffalo WLI-UC-GNM
-Buffalo WLI-UC-G300N
-Conceptronic C300RU
-Conrad N150 mini
-DELL Wireless 1450
-DIGICOM USBWAVE54
-DIGICOM USBWAVE300C
-D-Link AirPlus G DWL-G122
-D-Link DWA-110 Version A1
-D-Link DWA-121 Version A1
-D-Link DWA-131 Version A1
-D-Link DWA-140 Version B1
-D-Link DWA-160 Version B1
-D-Link DWA-160 Version A2
-D-Link WUA-1340(Version A1
-Edimax EW-7811Un
-Edimax EW-7318USg
-Edimax EW-7711UAn
-Edup 150MBPS Wi-Fi Adapter
-Edup Ultra-Mini Nano
-Edup EP-N8508
-Eminent EM4575
-EnGenius EUB9603
-Gigabyte GN-WB32L
-IOGear GWU625
-Linksys WUSB100 v2
-Linksys WUSB600N
-Linksys Linksys WUSB54GC
-LogiLink Nano Adapter 802.11n
-Mvix Nubbin MS-811N
-Netgear N150
-Netgear N150
-Netgear WG111v1
-Netgear WG111v2
-Netgear WNA1000M
-OvisLink Evo-W300USB
-Patriot Memory PCBOWAU2-N
-Ralink RT2770F
-Ralink RT3070
-Ralink RT2501
-Ralink RT2573
-Ralink RT5370
-Rosewill RNX-N180UBE
-Rosewill RNX-G1 Wireless B/G Adapter
-Rosewill RNX-MiniN1
-Sabrent USB-A11N
-Sagem XG-760N
-Sempre WU300-2
-Sitecom N300
-SL SL-1507N
-SMC SMCWUSBS-N
-SMC SMCWUSB-G
-Sony UWA-BR100
-Tenda W311MI
-Tenda W311U
-The Pi Hut USB 802.11n
-TP-Link TL-WN422G v2
-TP-Link TL-WN721N
-TP-Link TL-WN723N
-TP-Link TL-WN821N
-Trendnet TEW-648UBM
-Widemac RT5370
-ZyXEL NWD2105
-ZyXEL G-202
+Atheros
+RTL8187
 
+and more
 
 
 #######################################################
