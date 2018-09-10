@@ -60,7 +60,7 @@ echo "[+] Unneeded startup items removed."
 ############################  DEV-ii-L installers #####################################
 
 cd /opt/
-git clone  https://github.com/DEV-ii-L/DEV-ii-L/INSTALLS/  
+git clone  https://github.com/DEV-ii-L/DEV-ii-L.git
 
 
 
