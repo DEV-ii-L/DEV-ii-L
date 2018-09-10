@@ -27,46 +27,11 @@ deb http://cz.deb.devuan.org/merged ascii          main
 deb http://cz.deb.devuan.org/merged ascii-updates  main
 deb http://cz.deb.devuan.org/merged ascii-security main
 
-
-
-#######################################################
-
-
-## 2.TOOLS INSTALL  #########################################
-
-#!/bin/bash
-echo ""
-
-# Verify we are root
-if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root" 1>&2
-   exit 1
-fi
-
-# Verify  DEV-ii-L 0.1 is not already installed
-if [ "`grep -o 0.3 /etc/motd.tail`" == "0.1" ] ; then 
-        echo "[-]  DEV-ii-L 0.1 already installed. Aborting..."
-        exit 1
-fi
-
-echo ""
-echo ""
-echo "BANNER			  "
-echo ""
-echo ""
-
-# Make sure all installer files are owned by root
-#chown -R root:root .
-
-
 #############################   APT-GET  a  APTITUDE #############################
 
 # Make  update & upgrade
 aptitude -y update  && aptitude -y upgrade
 echo "[+] Base system Devuan packages updated."
-
-
-
 
 # Install baseline pentesting tools via apt
 echo "[+] Installing baseline pentesting tools/dependencies..."
@@ -92,30 +57,14 @@ echo "[+] Unneeded startup items removed."
 
 
 
-
-###################################################################################
-VMPLAYER
-
-https://my.vmware.com/en/web/vmware/free#desktop_end_user_computing/vmware_workstation_player/14_0
-
-Windows
-
-https://www.microsoft.com/cs-cz/software-download/windows10ISO
-
-###################################################################################
+############################  DEV-ii-L installers #####################################
 
 cd /opt/
 git clone  https://github.com/DEV-ii-L/DEV-ii-L/INSTALLS/  
 
 
 
-
-
-
-############################  7. FRAMEWORK #####################################
-export HEADER=FRAMEWORK
-echo "[+] Installing $HEADER tools suite..."
-
+############################  Metasploit-DEV #####################################
 
 #### Install Metasploit-DEV
 echo "[+] Installing latest Metasploit Framework..."
@@ -123,12 +72,6 @@ aptitude -y install ruby irb ri rubygems libruby ruby-dev libpcap-dev nokogiri* 
 
 cd /opt
 curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall
-
-mkdir /opt/infectionmonkey
-cd /opt/infectionmonkey
-wget https://github.com/guardicore/monkey/releases/download/1.5.2/infection_monkey_1.5.2_deb.tgz
-tar -xvf ./infection_monkey_1.5.2_deb.tgz 
-dpkg --install ./monkey_island.deb
 
 
 #################################################################################
@@ -148,12 +91,16 @@ openvas-scapdata-sync
 openvas-certdata-sync
 
 
-echo "[+] $HEADER pentesting tools installed."
+###################################################################################
+VMPLAYER
 
+https://my.vmware.com/en/web/vmware/free#desktop_end_user_computing/vmware_workstation_player/14_0
+
+Windows
+
+https://www.microsoft.com/cs-cz/software-download/windows10ISO
 
 ###################################################################################
-
-
 ############################  APPLETS,EXTRAS #####################################
 export HEADER=APPLETS
 echo "[+] Installing $HEADER ..."
