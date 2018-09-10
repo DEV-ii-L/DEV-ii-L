@@ -1,6 +1,6 @@
 #!/bin/bash
 ##################################################################################
-export HEADER=WINDOWS
+export HEADER=WIFI
 echo "[+] Installing $HEADER tools suite..."
 
 mkdir -p /opt/$HEADER/
@@ -8,17 +8,13 @@ cd /opt/$HEADER/
 ##################################################################################
 toollist=(
 
-'https://github.com/byt3bl33d3r/DeathStar'
-'https://github.com/byt3bl33d3r/pth-toolkit'
-'https://github.com/CoreSecurity/impacket'
-'https://github.com/GDSSecurity/Windows-Exploit-Suggester.git'
-'https://github.com/chango77747/AdEnumerator.git'
-'https://github.com/Kevin-Robertson/Invoke-TheHash'
-'https://github.com/masterzen/winrm-cli'
-'https://github.com/Raikia/SMBCrunch.git'
-'https://github.com/Raikia/CredNinja.git'
-'https://github.com/gentilkiwi/mimikatz.git'
-'https://github.com/byt3bl33d3r/CrackMapExec.git'
+'https://github.com/derv82/wifite2.git'
+'https://github.com/esc0rtd3w/wifi-hacker.git'
+'https://github.com/Tle7839/wifiphiser.git'
+'https://github.com/SilentGhostX/HT-WPS-Breaker.git'
+'https://github.com/vnik5287/wpa-autopwn.git'
+'https://github.com/xtr4nge/giskismet.git'
+'https://github.com/scipag/btle-sniffer'
 
 )
 ##################################################################################

@@ -1,6 +1,6 @@
 #!/bin/bash
 ##################################################################################
-export HEADER=WINDOWS
+export HEADER=OWASP
 echo "[+] Installing $HEADER tools suite..."
 
 mkdir -p /opt/$HEADER/
@@ -8,17 +8,16 @@ cd /opt/$HEADER/
 ##################################################################################
 toollist=(
 
-'https://github.com/byt3bl33d3r/DeathStar'
-'https://github.com/byt3bl33d3r/pth-toolkit'
-'https://github.com/CoreSecurity/impacket'
-'https://github.com/GDSSecurity/Windows-Exploit-Suggester.git'
-'https://github.com/chango77747/AdEnumerator.git'
-'https://github.com/Kevin-Robertson/Invoke-TheHash'
-'https://github.com/masterzen/winrm-cli'
-'https://github.com/Raikia/SMBCrunch.git'
-'https://github.com/Raikia/CredNinja.git'
-'https://github.com/gentilkiwi/mimikatz.git'
-'https://github.com/byt3bl33d3r/CrackMapExec.git'
+'https://github.com/hatRiot/clusterd'
+'https://github.com/epinna/tplmap'
+'https://github.com/faizann24/XssPy.git'
+'https://github.com/federicodotta/Java-Deserialization-Scanner.git'
+'https://github.com/joaomatosf/jexboss.git'
+'https://github.com/johndekroon/serializekiller.git'
+'https://github.com/sqlmapproject/sqlmap.git'
+'https://github.com/sullo/nikto.git'
+'https://github.com/yehia-mamdouh/XSSYA.git'
+'https://github.com/meefik/keystorebreaker'
 
 )
 ##################################################################################
