@@ -1,27 +1,36 @@
 #!/bin/bash
 ##################################################################################
 export HEADER=REPORTING
-echo "[+] Installing $HEADER tools suite..."
+echo "[+] Creating default $HEADER folder structure..."
 
-mkdir -p /opt/$HEADER/
-cd /opt/$HEADER/
+mkdir -p /$HEADER/
+mkdir /$HEADER/KLIENT_A/
+mkdir /$HEADER/KLIENT_A/PROJEKT_1
+mkdir /$HEADER/KLIENT_A/PROJEKT_2
+
+echo "[+] Creating default info.txt..."
+
+
+touch /$HEADER/KLIENT_A/PROJEKT_1/info.txt
+echo "login:" >> /$HEADER/KLIENT_A/PROJEKT_1/info.txt
+echo "pass:" >> /$HEADER/KLIENT_A/PROJEKT_1/info.txt
+echo "ip/url:" >> /$HEADER/KLIENT_A/PROJEKT_1/info.txt
+
+echo "[+] Creating default findings.txt..."
+
+touch /$HEADER/KLIENT_A/PROJEKT_1/findings.txt
+echo "F1" >> /$HEADER/KLIENT_A/PROJEKT_1/findings.txt
+echo "Dotaz:" >> /$HEADER/KLIENT_A/PROJEKT_1/findings.txt
+echo "Odpoved:" >> /$HEADER/KLIENT_A/PROJEKT_1/findings.txt
+
+
+echo "[+] Creating default report.txt..."
+
+touch /$HEADER/KLIENT_A/PROJEKT_1/report.txt
+echo "CUT and PASTE here" >> /$HEADER/KLIENT_A/PROJEKT_1/report.txt
 ##################################################################################
-toollist=(
 
-'https://github.com/ChrisTruncer/EyeWitness.git'
+echo "[+] $HEADER installed."
 
-)
-##################################################################################
-for repo in ${toollist[@]};do 
-{
-git clone $repo; } || {
-dir=${repo##*/}
-dir=${dir%.*}
-cd $dir
-git pull origin master
-cd ..
-}
-done
 cd /opt/
-echo "[+] $HEADER tool set installed."
 ###################################################################################

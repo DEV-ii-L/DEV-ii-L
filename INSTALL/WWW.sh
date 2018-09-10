@@ -27,6 +27,7 @@ wwwlist=(
 'https://github.com/xorrior/RandomPS-Scripts'
 'https://github.com/dafthack/HostRecon'
 'https://github.com/dafthack/DomainPasswordSpray'
+'https://github.com/ChrisTruncer/EyeWitness.git'
 
 )
 
