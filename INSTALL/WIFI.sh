@@ -15,6 +15,7 @@ toollist=(
 'https://github.com/vnik5287/wpa-autopwn.git'
 'https://github.com/xtr4nge/giskismet.git'
 'https://github.com/scipag/btle-sniffer'
+'https://github.com/DanMcInerney/wifijammer.git'
 
 )
 ##################################################################################
