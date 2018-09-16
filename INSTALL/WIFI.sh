@@ -16,6 +16,7 @@ toollist=(
 'https://github.com/xtr4nge/giskismet.git'
 'https://github.com/scipag/btle-sniffer'
 'https://github.com/DanMcInerney/wifijammer.git'
+'https://github.com/ChristopheJacquet/PiFmRds.git'
 
 )
 ##################################################################################
