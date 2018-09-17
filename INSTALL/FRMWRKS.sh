@@ -11,6 +11,8 @@ toollist=(
 'https://github.com/devilscream/litesploit.git'
 'https://github.com/D4Vinci/One-Lin3r.git'
 'https://github.com/ElevenPaths/Eternalblue-Doublepulsar-Metasploit'
+'https://github.com/gh0stsec/Eternalblue-Doublepulsar-Metasploit'
+'https://github.com/interference-security/Eternalblue-Doublepulsar.git'
 'https://github.com/FluxionNetwork/fluxion'
 'https://github.com/gabemarshall/Brosec'
 'https://github.com/g0tmi1k/mpc.git'
