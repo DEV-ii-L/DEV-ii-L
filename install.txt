@@ -83,8 +83,8 @@ openvasmd --create_user ii
 openvassmd  --user=ii  --new_password=ii
 openvas-mkcert
 openvas-mkcert-client
-cp /tmp/open*/cert_oem.pem  /var/lib/openvaas/CA/clientcert.pem
-cp /tmp/open*/key_oem.pem /var/lib/openvas/private/CA/clientkey.pem
+cp /tmp/open*/cert_om.pem  /var/lib/openvas/CA/clientcert.pem
+cp /tmp/open*/key_om.pem /var/lib/openvas/private/CA/clientkey.pem
 
 openvas-nvt-sync
 openvas-scapdata-sync
