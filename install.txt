@@ -79,8 +79,8 @@ curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/t
 #################################################################################
 
 apt-get install -y greenbone-security-assistant openvas*
-openvasmd --create_user ii
-openvassmd  --user=ii  --new_password=ii
+openvasmd --create-user=
+openvassmd  --user=  --new-password=
 openvas-mkcert
 openvas-mkcert-client
 cp /tmp/open*/cert_om.pem  /var/lib/openvas/CA/clientcert.pem
